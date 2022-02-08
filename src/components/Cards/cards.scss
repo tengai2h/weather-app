@@ -1,0 +1,15 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  width: 80%;
+  height: 500px;
+}
+
+.empty {
+  width: 100%;
+  text-align: center;
+  align-self: center;
+  font-size: 40px;
+  color: rgba($color: #000000, $alpha: 0.6);
+}
