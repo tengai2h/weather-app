@@ -1,23 +1,17 @@
-import React, { FC, useCallback, useEffect } from 'react';
+import React, { FC, useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { isFulfilledSelector, weatherCardsSelector } from 'redux/cards/selectors';
 import { removeCard, updateCardAsync } from 'redux/cards/actions';
-import { setIsFulfilled } from 'redux/cards/actionCreators';
+import { weatherCardsSelector } from 'redux/cards/selectors';
 import Card from './Card';
 
 const Cards: FC = () => {
+  const [isUpdateWeatherCards, setIsUpdateWeatherCards] =
+    useState(false);
+
   const weatherCards = useSelector(weatherCardsSelector);
-  const isFulfilled = useSelector(isFulfilledSelector);
 
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (!isFulfilled) {
-      weatherCards.forEach(({ name }) => dispatch(updateCardAsync(name)));
-      dispatch(setIsFulfilled());
-    }
-  }, [dispatch, weatherCards, isFulfilled]);
 
   const handlerRemoveCard = useCallback(
     (city) => {
@@ -32,6 +26,15 @@ const Cards: FC = () => {
     },
     [dispatch],
   );
+
+  useEffect(() => {
+    if (!isUpdateWeatherCards) {
+      weatherCards.forEach(({ name }) =>
+        dispatch(updateCardAsync(name)),
+      );
+      setIsUpdateWeatherCards(true);
+    }
+  }, [dispatch, weatherCards, isUpdateWeatherCards]);
 
   return (
     <div className="cards">

@@ -10,3 +10,7 @@ export interface UpdateCardsCreatorType {
   type: typeof UPDATE_CARD;
   payload: IWeather;
 }
+
+export interface WeatherState {
+  weatherCards: IWeather[];
+}

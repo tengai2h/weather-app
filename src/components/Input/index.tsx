@@ -1,13 +1,22 @@
 import React, { FC, SyntheticEvent } from 'react';
 
-interface Props {
+interface IInputProps {
   className: string;
   onChange?: (e: SyntheticEvent<HTMLInputElement>) => void;
   placeHolder?: string;
 }
 
-const Input: FC<Props> = ({ className, onChange, placeHolder }: Props) => (
-  <input className={className} onChange={onChange} type="text" placeholder={placeHolder} />
+const Input: FC<IInputProps> = ({
+  className,
+  onChange,
+  placeHolder,
+}: IInputProps) => (
+  <input
+    className={className}
+    onChange={onChange}
+    type="text"
+    placeholder={placeHolder}
+  />
 );
 
 export default Input;

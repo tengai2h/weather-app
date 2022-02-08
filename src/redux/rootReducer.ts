@@ -7,12 +7,13 @@ import { cardReducer } from './cards/cardReducer';
 const rootConfig = {
   key: 'root',
   storage,
-  whiteList: ['weatherCards'],
+  whiteList: ['weather'],
 };
 
 const cardsConfig = {
-  key: 'weatherCards',
+  key: 'weather',
   storage,
+  whiteList: ['weatherCards'],
 };
 
 export const rootReducer = persistReducer(

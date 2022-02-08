@@ -1,4 +1,4 @@
-import { WeatherState } from './cards/cardReducerTypes';
+import { WeatherState } from './cards/types';
 
 export interface State {
   weather: WeatherState;

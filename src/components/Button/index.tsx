@@ -4,10 +4,15 @@ interface Props {
   className: string;
   type?: 'button' | 'submit' | 'reset';
   onClick?: () => void;
-  buttonText: string;
+  buttonText: React.ReactNode;
 }
 
-const Button: FC<Props> = ({ className, type, buttonText, onClick }: Props) => (
+const Button: FC<Props> = ({
+  className,
+  type,
+  buttonText,
+  onClick,
+}: Props) => (
   <button className={className} type={type} onClick={onClick}>
     {buttonText}
   </button>

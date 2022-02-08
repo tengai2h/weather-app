@@ -3,7 +3,10 @@ import { Dispatch } from 'redux';
 
 import { REMOVE_CARD } from './actionTypes';
 import { API_KEY } from 'constant/weatherAPIKey';
-import { getCardsCreator, updateCardsCreator } from './actionCreators';
+import {
+  getCardsCreator,
+  updateCardsCreator,
+} from './actionCreators';
 
 export const getWeatherCard = (city: string) => {
   return async (dispatch: Dispatch) => {
@@ -36,4 +39,3 @@ export const updateCardAsync =
         console.log(error);
       }
     };
-    
