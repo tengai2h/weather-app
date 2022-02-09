@@ -1,7 +1,8 @@
-import Button from 'components/Button';
 import React, { FC } from 'react';
+import { Link } from 'react-router-dom';
 
 import { ICardsProps } from '../types';
+import Button from 'components/Button';
 
 interface ICardPropsType extends ICardsProps {
   handlerRemoveCard: (id: number) => void;
@@ -24,6 +25,9 @@ const Card: FC<ICardPropsType> = ({
         </p>
         <p>{Math.round(main.temp)} C</p>
       </div>
+      <Link className="link" to={`card/${id}`}>
+        Get full info
+      </Link>
       <div className="card-buttons">
         <Button
           className="button"

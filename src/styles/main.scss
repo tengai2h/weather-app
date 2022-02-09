@@ -3,7 +3,14 @@
 @import '../components/Main/main.scss';
 @import '../components/Cards/cards.scss';
 @import '../components/Cards/Card/card.scss';
+@import '../components//CardPage/cardPage.scss';
 
 body {
   background-color: rgb(227, 250, 249);
+}
+
+.link { 
+  font-family: serif;
+  font-weight: bold;
+  text-decoration: none;
 }

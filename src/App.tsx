@@ -3,14 +3,15 @@ import { Provider } from 'react-redux';
 import { persistor, store } from 'redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
 
-import Main from 'components/Main';
-import Header from 'components/Header';
+import Router from 'components/Router';
+import { BrowserRouter } from 'react-router-dom';
 
 const App: FC = () => (
   <Provider store={store}>
     <PersistGate persistor={persistor}>
-      <Header />
-      <Main />
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
     </PersistGate>
   </Provider>
 );
